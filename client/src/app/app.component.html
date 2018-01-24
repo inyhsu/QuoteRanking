@@ -1,0 +1,27 @@
+<div class="container">
+  <form (submit)="onSubmit()">
+    <h2>Add a Quote </h2>
+    <textarea rows="4" cols="50" name="content" [(ngModel)]="quote.content"></textarea>
+    <h2>Author</h2>
+    <input type="text" name="author" [(ngModel)]="quote.author"/>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <div *ngIf="errors">
+    <span style="color:red">{{errors.message}}</span>
+  </div>
+  <h2>Quote List</h2>
+  <div class="quote" *ngFor="let q of datas">
+    <div id="word">
+      <p>{{q.content}}</p>
+      <p>- {{q.author}}</p>
+    </div>
+    <div id="rating">
+      <p>{{q.rating}}</p>
+    </div>
+    <div id="button">
+      <button (click)="voteUp(q)">Vote Up</button>
+      <button (click)="voteDown(q)">Vote Down</button>
+      <button (click)="delete(q._id)">Delete</button>
+    </div>
+  </div>
+</div>

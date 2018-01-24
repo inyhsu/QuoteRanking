@@ -1,0 +1,17 @@
+.quote{
+    border: 1px solid black;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+#word{
+    display: inline-block;
+}
+
+#rating{
+    font-size: 3em;
+}
+
+/* #button{
+    display: inline-block;
+} */
